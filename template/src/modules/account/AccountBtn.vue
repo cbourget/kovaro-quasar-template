@@ -2,7 +2,7 @@
   <a class="account-btn" v-if="user">
     <img :src="getAvatar(user)"/>
     <q-popover ref="popover" anchor="bottom right" self="top right" :fit="false">
-      <account-menu :user="user"/>
+      <account-menu :user="user" :disconnection="disconnection"/>
     </q-popover>
   </a>
   <q-btn
@@ -38,6 +38,9 @@ export default {
     }
   },
   computed: {
+    disconnection () {
+      return `${this.connection}?disconnect=true`
+    },
     user () {
       return this.$store.getters['auth:user']
     }

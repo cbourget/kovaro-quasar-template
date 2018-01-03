@@ -15,7 +15,10 @@
       <q-btn flat small icon="settings">
         {{$t('account.Settings')}}
       </q-btn>
-      <q-btn flat small icon="exit_to_app">
+      <q-btn
+        flat small
+        icon="exit_to_app"
+        @click="$router.push(disconnection)">
         {{$t('auth.Disconnect')}}
       </q-btn>
     </q-card-actions>
@@ -49,6 +52,10 @@ export default {
     QItemTile
   },
   props: {
+    disconnection: {
+      default: null,
+      type: String
+    },
     user: {
       type: Object,
       required: true

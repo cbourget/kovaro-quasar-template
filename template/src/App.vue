@@ -74,14 +74,15 @@ export default {
     }
   },
   created: function () {
+    // this.$store.commit('auth:setUser', {
+    //   username: 'dummy',
+    //   email: 'foo@bar.com'
+    // })
+
     this.$store.watch(this.$store.getters['modal:opened'], (opened) => {
       if (this.$refs.modal) {
         opened ? this.$refs.modal.open() : this.$refs.modal.close()
       }
-    })
-    this.$store.commit('auth:setUser', {
-      username: 'dummy',
-      email: 'foo@bar.com'
     })
     this.$store.dispatch('app:init', app)
     this.$store.dispatch('modal:init', modal)

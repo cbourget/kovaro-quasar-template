@@ -22,6 +22,9 @@ export default {
   },
   mixins: [UnauthenticatedMixin],
   mounted: function () {
+    if (this.$route.query.disconnect) {
+      this.$store.dispatch('auth:disconnect')
+    }
     this.$store.dispatch('auth:startConnection')
   },
   store
