@@ -8,13 +8,20 @@ import VueAxios from 'vue-axios'
 import Quasar from 'quasar'
 import axios from 'axios'
 
+import { AuthPlugin } from 'kovaro-vue-common'
+
+import i18n from './i18n'
 import store from './store'
 import router from './router'
 
 Vue.config.productionTip = false
 
+Vue.use(Quasar)
 Vue.use(VueAxios, axios)
-Vue.use(Quasar) // Install Quasar Framework
+Vue.use(AuthPlugin, axios, {
+  connectUrl: 'http://localhost:8000/auth/login',
+  registerUrl: 'http://localhost:8000/users'
+})
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')
@@ -30,6 +37,7 @@ Quasar.start(() => {
     el: '#app',
     router,
     render: h => h(require('./App').default),
+    i18n,
     store
   })
 })

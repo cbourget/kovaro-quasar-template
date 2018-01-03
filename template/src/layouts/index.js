@@ -1,5 +1,7 @@
-import AppLayout from './AppLayout.vue'
+import KFull from './KFull.vue'
+import KMain from './KMain.vue'
 
 export {
-  AppLayout
+  KFull,
+  KMain
 }

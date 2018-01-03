@@ -12,3 +12,44 @@
 // Custom App variables must be declared before importing Quasar.
 // Quasar will use its default values when a custom variable isn't provided.
 @import '~quasar-framework/dist/quasar.mat.styl'
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background-color: $grey-bg;
+}
+
+body.with-modal {
+  padding-right: 0 !important;
+}
+
+header .q-toolbar {
+  transition: background-color 0.5s ease;
+}
+
+header.secondary .q-toolbar {
+  background-color: $secondary;
+}
+
+.layout-aside-left {
+  top: 50px;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.margin {
+  margin: 16px 40px;
+}
+
+.form-button-group {
+  margin: 16px 0;
+}
+
+.layout-aside-left {
+  border-right: 1px solid $grey-border;
+}

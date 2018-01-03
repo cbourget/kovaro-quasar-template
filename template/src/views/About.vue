@@ -1,5 +1,5 @@
 <template>
-  <p>Home Page</p>
+  <p>About Page</p>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ import {
 export default {
   data () {
     return {
-      title: null
+      title: 'About'
     }
   },
   mixins: [
