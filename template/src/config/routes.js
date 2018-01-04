@@ -1,29 +1,43 @@
-import { load } from '.'
+function load (component) {
+  return () => import(`src/${component}.vue`)
+}
 
 export default {
   items: [
     {
       path: '/',
       name: 'home',
-      component: load('views/Home')
+      component: load('views/Home'),
+      meta: {
+        permissions: ['authenticated']
+      }
     },
 
     {
       path: '/about',
       name: 'about',
-      component: load('views/About')
+      component: load('views/About'),
+      meta: {
+        permissions: ['authenticated']
+      }
     },
 
     {
       path: '/connect',
       name: 'connect',
-      component: load('views/Connect')
+      component: load('views/Connect'),
+      meta: {
+        permissions: ['unauthenticated']
+      }
     },
 
     {
       path: '/register',
       name: 'register',
-      component: load('views/Register')
+      component: load('views/Register'),
+      meta: {
+        permissions: ['unauthenticated']
+      }
     },
 
     {

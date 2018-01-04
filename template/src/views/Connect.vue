@@ -10,8 +10,6 @@ import {
   Connection
 } from 'src/modules'
 
-import { UnauthenticatedMixin } from './mixins'
-
 import store from 'src/store'
 
 export default {
@@ -20,7 +18,6 @@ export default {
     AuthPanel,
     Connection
   },
-  mixins: [UnauthenticatedMixin],
   mounted: function () {
     if (this.$route.query.disconnect) {
       this.$store.dispatch('auth:disconnect')

@@ -10,13 +10,13 @@ import { QLayout } from 'quasar'
 import { classObject } from 'kovaro-vue-common'
 
 export default {
-  name: 'k-full',
+  name: 'k-empty',
   components: {
     QLayout
   },
   data () {
     return {
-      bodyClass: classObject('layout-full')
+      bodyClass: classObject('layout-empty')
     }
   }
 }

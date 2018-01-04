@@ -41,7 +41,7 @@ import {
   QIcon
 } from 'quasar'
 
-import { KMenu } from 'src/components'
+import { KMenu } from '../menu'
 
 import { classObject } from 'kovaro-vue-common'
 

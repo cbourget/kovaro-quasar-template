@@ -16,8 +16,6 @@ import {
   RegistrationComplete
 } from 'src/modules'
 
-import { UnauthenticatedMixin } from './mixins'
-
 import store from 'src/store'
 
 export default {
@@ -27,7 +25,6 @@ export default {
     Registration,
     RegistrationComplete
   },
-  mixins: [UnauthenticatedMixin],
   computed: {
     registrationComplete () {
       return this.$store.getters['auth:registrationComplete']

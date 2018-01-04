@@ -3,10 +3,7 @@
 </template>
 
 <script>
-import {
-  AuthenticatedMixin,
-  TitleMixin
-} from './mixins'
+import { TitleMixin } from './mixins'
 
 export default {
   data () {
@@ -15,7 +12,6 @@ export default {
     }
   },
   mixins: [
-    AuthenticatedMixin,
     TitleMixin
   ]
 }

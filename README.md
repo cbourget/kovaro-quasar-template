@@ -16,10 +16,10 @@ $ cd kovaro-vue-common
 $ npm link
 
 # generate a project folder with this template
-$ quasar init @cbourget/kovaro-template my-project
+$ quasar init @cbourget/kovaro-quasar-template my-project
 
 $ cd my-project
 $ npm install
-$ npm link kovrao-vue-common
+$ npm link kovaro-vue-common
 $ quasar dev
 ```

@@ -14,14 +14,15 @@ import i18n from './i18n'
 import store from './store'
 import router from './router'
 
+import api from './config/api'
+import app from './config/app'
+import modal from './config/modal'
+
 Vue.config.productionTip = false
 
 Vue.use(Quasar)
 Vue.use(VueAxios, axios)
-Vue.use(AuthPlugin, axios, {
-  connectUrl: 'http://localhost:8000/auth/login',
-  registerUrl: 'http://localhost:8000/users'
-})
+Vue.use(AuthPlugin, axios, api.auth)
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')
@@ -35,9 +36,19 @@ Quasar.start(() => {
   /* eslint-disable no-new */
   new Vue({
     el: '#app',
+    i18n,
     router,
     render: h => h(require('./App').default),
-    i18n,
-    store
+    store,
+
+    created: function () {
+      this.$store.commit('auth:setUser', {
+        username: 'dummy',
+        email: 'foo@bar.com'
+      })
+
+      this.$store.dispatch('app:init', app)
+      this.$store.dispatch('modal:init', modal)
+    }
   })
 })

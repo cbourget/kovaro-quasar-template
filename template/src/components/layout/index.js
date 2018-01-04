@@ -1,7 +1,7 @@
-import KFull from './KFull.vue'
+import KEmpty from './KEmpty.vue'
 import KMain from './KMain.vue'
 
 export {
-  KFull,
+  KEmpty,
   KMain
 }
